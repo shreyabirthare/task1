@@ -1,9 +1,5 @@
 <div>
-  <ul>
-    <li *ngFor="let item of task1;">
-      {{item}}<span><button (click)="servtasks.delete(item)">x</button></span>
-    </li>
-  </ul>
+  
 </div>
 <br>
 <br>
@@ -11,7 +7,7 @@
     <label>add task:
       <input [(ngModel)]="addtask" placeholder="task" />
     </label>
-    <button (click)="servtasks.add(addtask)">
+    <button (click)="add(addtask)">
       add
     </button>
   </div>

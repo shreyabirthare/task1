@@ -3,7 +3,13 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-<app-tasks></app-tasks>
-
+  <div>
+    <ul>
+      <li *ngFor="let item of task1;">
+        {{item}}<span><button (click)="delete(item)" >x</button></span>
+      </li>
+    </ul>
+  </div>
+<app-tasks [taskip]=task1 (evemm)="newlist($event)" ></app-tasks>
 </div>
 
