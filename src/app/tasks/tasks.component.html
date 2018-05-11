@@ -7,7 +7,7 @@
     <label>add task:
       <input [(ngModel)]="addtask" placeholder="task" />
     </label>
-    <button (click)="add(addtask)">
+    <button (click)="this.servtasks.add(addtask)">
       add
     </button>
   </div>

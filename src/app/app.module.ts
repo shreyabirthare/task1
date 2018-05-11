@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { AddtaskService } from './addtask.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +13,7 @@ import { TasksComponent } from './tasks/tasks.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AddtaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

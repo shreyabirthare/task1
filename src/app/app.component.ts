@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddtaskService } from './addtask.service';
 
 @Component({
   selector: 'app-root',
@@ -7,24 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'tasks to do';
-  task1:Array<string> =['do hw','eat','sleep'];
+  task1: Array<string>;
 
-  newlist(task3) {
-    this.task1 = task3;
-    console.log(this.task1);
-  }
-  delete(item1){
-    var i = this.task1.indexOf(item1);
-    if(i != -1) {
-    this.task1.splice(i, 1);
-    var del = JSON.stringify(this.task1); 
-    }
-  }
-  constructor () {
 
-  }
+  constructor (private servtasks1: AddtaskService) { }
 
   ngOnInit () {
+
+    this.task1 = this.servtasks1.task1;
+    this.servtasks1.gettask().subscribe(function(newval){ this.task1=newval; } ); //service calling gettask function and subscribes 
+ // new val means observable ki new value
   }
 
   
